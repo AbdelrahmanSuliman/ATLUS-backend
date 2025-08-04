@@ -12,8 +12,15 @@ dotenv.config();
 
 const app = express();
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://atlus-frontend.vercel.app',
+  'https://atlus-frontend-mrgfri78o-abdelrahman-ahmeds-projects-9c1bba00.vercel.app'
+];
+
+
 const corsOptions = {
-  origin: process.env.FRONTEND_URL,
+  origin: allowedOrigins,
   credentials: true,
   optionsSuccessStatus: 200
 };

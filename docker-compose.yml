@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: .
+    ports:
+      - "5050:3000" 
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://abdelrahman:Speedo369_963@db:5432/min-ecom
+    command: npm run start
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: abdelrahman
+      POSTGRES_PASSWORD: Speedo369_963
+      POSTGRES_DB: min-ecom
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

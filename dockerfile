@@ -10,17 +10,20 @@ COPY package*.json ./
 # 4. Install dependencies
 RUN npm install
 
-# 5. Copy the rest of the application code
+# 5. Copy the rest of the application
 COPY . .
 
 # 6. Generate Prisma client
 RUN npx prisma generate
 
-# 7. Build the TypeScript code
+# 7. Run migrations in production (for deployed environments)
+RUN npx prisma migrate deploy
+
+# 8. Build the TypeScript code
 RUN npm run build
 
-# 8. Expose the port
+# 9. Expose port
 EXPOSE 3000
 
-# 9. Start the app
+# 10. Start app
 CMD ["npm", "run", "start"]

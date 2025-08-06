@@ -16,7 +16,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'https://atlus-frontend.vercel.app',
   'https://atlus-frontend-jtq0601km-abdelrahman-ahmeds-projects-9c1bba00.vercel.app',
-  'https://atlus-frontend-5tmh8lbjc-abdelrahman-ahmeds-projects-9c1bba00.vercel.app/'
+  'https://atlus-frontend-5tmh8lbjc-abdelrahman-ahmeds-projects-9c1bba00.vercel.app'
 ];
 
 
